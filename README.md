@@ -5,8 +5,8 @@ These data are exported from [neodb.social](https://neodb.social) (the flagship 
 
 note: 
 
-- importing this data set is *completely optional* to run your own NeoDB instance, actually for most cases I suggest you don't use it to keep your own data clean and managable, and you can get all these data thru built-in peer search in your NeoDB instance;
-- this data set is crowdsourced by users in NeoDB network, data from other NeoDB instances may exist in this data set as well, there's no guarantee for the quality and accuracy of this data set;
+- importing this data set is *completely optional* to run your own NeoDB instance, actually for most cases I suggest you don't use it, so that your own database is clean and managable. neodb.social provides this data set thru a public API, and your own instance can, and by default will, query neodb.social when you search in your own NeoDB instance;
+- this data set is crowdsourced by users in NeoDB network, data from other NeoDB instances may exist in this data set as well, there's no guarantee for the quality or accuracy of this data set;
 - this data set is supposed to be public metadata information, however, we cannot 100% validate them given the volume; if you believe any piece of data violate your rights under US copyright laws, please contact us. 
 
 how to use
@@ -14,12 +14,16 @@ how to use
 
 download data files from releases page
 
-follow [the instructions on neodb.net](https://neodb.net/install/) to install NeoDB, do not search or create any item yet
+follow [the instructions on neodb.net](https://neodb.net/install/) to install NeoDB, but be sure:
+ - add `NEODB_IMAGE=neodb/neodb:0.11.4.1` in `.env` (change `0.11.4.1` to the version on the data set release page you download from) before pull the images
+ - do not search or create any item after install
 
 restore data set to your database
 ```
 cat catalog_backup_20250122.sql.bz2.part* | bunzip2 -c | docker compose --profile production run -T --rm shell neodb-manage dbshell
 ```
+
+remove `NEODB_IMAGE=neodb/neodb:0.11.4.1` from `.env`, [upgrade the instance](https://neodb.net/upgrade/)
 
 clean it up
 ```
