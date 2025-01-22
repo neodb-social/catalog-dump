@@ -22,7 +22,7 @@ pull images, run migration, clean some tables before importing
 ```
 docker compose --profile production pull
 docker compose --profile production run --rm migration
-echo 'DELETE from auth_permission; DELETE FROM django_content_type;' | docker compose --profile production run -T --rm shell neodb-manage dbshell
+echo 'DELETE FROM auth_permission; DELETE FROM django_content_type;' | docker compose --profile production run -T --rm shell neodb-manage dbshell
 ```
 
 restore data set to your database
