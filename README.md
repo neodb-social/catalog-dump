@@ -5,7 +5,7 @@ These data are exported from [neodb.social](https://neodb.social) (the flagship 
 
 note: 
 
-- importing this data set is *completely optional* to run your own NeoDB instance, actually for most cases I recommend you don't use it, so that your own database is clean and managable. neodb.social provides this data set thru a public API, and your own instance can, and by default will, query neodb.social when you search in your own NeoDB instance;
+- importing this data set is *completely optional* to run your own NeoDB instance, actually for most cases I recommend you don't use it, so that your own database is clean and managable. neodb.social also provides this data set thru a public API, so your own instance can, and by default will, query neodb.social when you search in your own NeoDB instance;
 - this data set is crowdsourced by users in NeoDB network, data from other NeoDB instances may exist in this data set as well, there's no guarantee for the quality or accuracy of this data set;
 - this data set is supposed to be public metadata information, however, we cannot 100% validate them given the volume; if you believe any piece of data violate your rights under US copyright laws, please contact us. 
 
